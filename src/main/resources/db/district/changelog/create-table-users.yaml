@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: StepninKV
+      changes:
+        - createTable:
+            tableName: USERS
+            columns:
+              - column:
+                  name: ID
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: NAME
+                  type: varchar(100)
+                  constraints:
+                    nullable: false

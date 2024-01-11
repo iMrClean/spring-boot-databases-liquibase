@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    - name: emweb
+      driver-class-name: org.postgresql.Driver
+      url: jdbc:postgresql://localhost:5432/emweb
+      username: postgres
+      password: postgres
+      liquibase:
+        change-log: classpath:db/emweb/db.changelog-master.yaml
+    - name: district
+      driver-class-name: org.postgresql.Driver
+      url: jdbc:postgresql://localhost:5432/district
+      username: postgres
+      password: postgres
+      liquibase:
+        change-log: classpath:db/district/db.changelog-master.yaml
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        temp:
+          use_jdbc_metadata_defaults: false
